@@ -11,3 +11,5 @@ docker pull skrjtech/khi_robot:noetic
 . installer/realtime.sh
 # Seting RunTime US
 sudo echo 950000 > /sys/fs/cgroup/cpu/docker/cpu.rt_runtime_us
+# Reboot 
+sudo reboot

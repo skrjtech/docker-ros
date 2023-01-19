@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt update
 CATKIN_WS=/khi_robot
 mkdir -p $CATKIN_WS/src
 cd $CATKIN_WS
