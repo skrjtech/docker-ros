@@ -1,0 +1,21 @@
+
+{
+	"name": "khi robot",
+	"dockerComposeFile": "../docker/cuda_base/docker-compose.yml",
+	"service": "khi_robot",
+	"workspaceFolder": "/main_ws",
+	"extensions": [
+		"ms-azuretools.vscode-docker",
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-vscode.cpptools",
+		"ms-iot.vscode-ros"
+	],
+	"settings": { 
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/usr/local/bin/pylint"
+    }
+}

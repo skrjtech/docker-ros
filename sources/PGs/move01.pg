@@ -1,0 +1,37 @@
+.PROGRAM movesample(); 指定した位置に移動するプログラム
+; 原点に戻る
+HOME 1
+X=100
+Y=0
+Z=0
+O=0
+A=0
+T=0
+Point moveval = (X,Y,Z,O,A,T); 原点から左方向に移動
+tp1=home + moveval
+X=0
+Y=0
+Z=50
+O=0
+A=0
+T=0
+Point moveval = (X,Y,Z,O,A,T); 下方向に移動
+tp2=tp1 + moveval
+X=-150
+Y=0
+Z=0
+O=0
+A=0
+T=0
+Point moveval = (X,Y,Z,O,A,T); 下方向に移動
+tp3=tp2 + moveval
+X=0
+Y=0
+Z=-50
+O=0
+A=0
+T=0
+Point moveval = (X,Y,Z,O,A,T); 下方向に移動
+tp4=tp3 + moveval
+HOME 1
+.END
