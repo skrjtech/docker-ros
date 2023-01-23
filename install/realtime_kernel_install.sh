@@ -1,7 +1,5 @@
 #!/bin/bash
 
-Current=$PWD
-
 rm -rf ~/kernel
 mkdir -p ~/kernel
 cd ~/kernel
@@ -16,7 +14,7 @@ cd linux-5.4.221
 patch -p1 < ../patch-5.4.221-rt79.patch
 
 sudo apt install -y linux-image-5.4.0-54-generic
-cp $Current/config/realtimeKernelConfig .config
+curl -o .config https://raw.githubusercontent.com/skrjtech/dockerRosKHIRoboto/main/config/realtimeKernelConfig
 
 sudo apt update && sudo apt -y upgrade
 sudo apt-get update && sudo apt-get -y upgrade
@@ -28,3 +26,5 @@ yes '' | make oldconfig
 make -j `nproc` deb-pkg
 sudo dpkg -i ../*.deb
 
+# Reboot
+# sudo reboot
