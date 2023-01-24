@@ -39,14 +39,14 @@ cp /boot/config-5.4.0-54-generic .config
 必要なパッケージファイルのインストール  
 
 ※インストール前にSourceCodeにチェックをつける必要がある  
-![SourceCode](../images/1.SetupBuild/1_sourceCodeCheck01.png)
-![SourceCode](../images/1.SetupBuild/1_sourceCodeCheck02.png)
-![SourceCode](../images/1.SetupBuild/1_sourceCodeCheck03.png)
+![SourceCode](../docs/images/1.SetupBuild/1_sourceCodeCheck01.png)
+![SourceCode](../docs/images/1.SetupBuild/1_sourceCodeCheck02.png)
+![SourceCode](../docs/images/1.SetupBuild/1_sourceCodeCheck03.png)
 
 Reloadを行ってウィンドウを閉じます
 
 <p align='center'>
-    <img src='../images/1.SetupBuild/1_sourceCodeCheck04.png'>
+    <img src='../docs/images/1.SetupBuild/1_sourceCodeCheck04.png'>
 </p>
 
 Source Codeの設定が終わったら必要パッケージをインストール 

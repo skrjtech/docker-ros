@@ -2,7 +2,7 @@ version: '3.9'
 services:
   ros:
     build: 
-      context: .docker/melodic/
+      context: ../..
       dockerfile: Dockerfile
     image: skrjtech/khi_robot:melodic
     container_name: ros_melodic
@@ -14,6 +14,9 @@ services:
       - type: bind
         source: /tmp/.X11-unix
         target: /tmp/.X11-unix
+      - type: bind
+        source: archives/khiRobotPack
+        target: /khi_robot/src/khiRobotPack
     cap_add:
       - SYS_NICE
     ulimits:
