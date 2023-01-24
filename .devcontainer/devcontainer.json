@@ -1,9 +1,9 @@
 
 {
 	"name": "khi robot",
-	"dockerComposeFile": "../docker/cuda_base/docker-compose.yml",
-	"service": "khi_robot",
-	"workspaceFolder": "/main_ws",
+	"dockerComposeFile": "../.docker/noetic/docker-compose.yml",
+	"service": "ros",
+	"workspaceFolder": "/ws",
 	"extensions": [
 		"ms-azuretools.vscode-docker",
 		"ms-python.python",

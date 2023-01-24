@@ -11,7 +11,12 @@ services:
     environment:
       - DISPLAY=$DISPLAY
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: ../..
+        target: /ws
     cap_add:
       - SYS_NICE
     ulimits:
