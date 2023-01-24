@@ -14,9 +14,7 @@ services:
       - type: bind
         source: /tmp/.X11-unix
         target: /tmp/.X11-unix
-      - type: bind
-        source: ../..
-        target: /ws
+    working_dir: /khi_robot
     cap_add:
       - SYS_NICE
     ulimits:
