@@ -1,9 +1,6 @@
 version: '3.9'
 services:
   ros:
-    build: 
-      context: ../..
-      dockerfile: Dockerfile
     image: skrjtech/khi_robot:melodic
     container_name: ros_melodic
     tty: true
@@ -15,12 +12,9 @@ services:
         source: /tmp/.X11-unix
         target: /tmp/.X11-unix
       - type: bind
-        source: archives/khiRobotPack
+        source: ../../archives/khiRobotPack
         target: /khi_robot/src/khiRobotPack
-    cap_add:
-      - SYS_NICE
-    ulimits:
-      rtprio: 99
-      rttime: -1 
-      memlock: 8428281856
-    network_mode: host
+      - type: bind
+        source: ../..
+        target: /ws
+    working_dir: /khi_robot

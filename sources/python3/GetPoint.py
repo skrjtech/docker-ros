@@ -1,5 +1,7 @@
+#!/usr/bin/env python
+# coding:utf-8
+
 import rospy
-import geometry_msgs.msg
 from khi_robot_msgs.srv import *
 from moveit_commander import MoveGroupCommander
 
@@ -19,12 +21,6 @@ class ArmHandPlay(MoveGroupCommander):
         assert 0 <= speed <= 1, 'min 0 ~ max 1'
         self.speed = speed
         self.sleep = sleep
-        # cmdhandler_client('driver', 'restart')
-        # print("RESTART")
-        # cmdhandler_client('as', 'ZPOW ON')
-        # print("ZPOW ON")
-        # cmdhandler_client('as', 'DO HOME 1')
-        # print("DO HOME 1")
 
         self.HOME = self.GetJoint()
 
@@ -65,3 +61,5 @@ if __name__ == '__main__':
     rospy.init_node('message', anonymous=True)
     armHand = ArmHandPlay()
     start_ipython(user_ns=globals(), argv=[])
+
+    

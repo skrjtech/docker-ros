@@ -1,8 +1,8 @@
 version: '3.9'
 services:
   ros:
-    image: skrjtech/khi_robot:noetic
-    container_name: ros_noetic
+    image: skrjtech/khi_robot:melodic
+    container_name: ros_melodic
     tty: true
     restart: always
     environment:
@@ -15,6 +15,13 @@ services:
         source: ../../archives/khiRobotPack
         target: /khi_robot/src/khiRobotPack
       - type: bind
-        source: ../..
+        source: ../../
         target: /ws
     working_dir: /khi_robot
+    cap_add:
+      - SYS_NICE
+    ulimits:
+      rtprio: 99
+      rttime: -1 
+      memlock: 8428281856
+    network_mode: host
