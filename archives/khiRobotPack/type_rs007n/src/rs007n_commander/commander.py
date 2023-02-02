@@ -103,7 +103,7 @@ class DriverCommander(object):
     def DriverRestart(self) -> bool: return DriverRestart()
     def SolenoidOn(self) -> bool: return SolenoidOn()
     def HandOpen(self) -> bool: return HandOpen()
-    def HandCloses(self) -> bool: return HandCloses()
+    def HandCloses(self) -> bool: return HandClose()
     def TPSupply(self) -> bool: return TPSupply()
     def EColorSensor(self) -> bool: return EColorSensor()
     def ColorSensor(self) -> int: return ColorSensor
