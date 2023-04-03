@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  khi_robot:
+    image: skrjtech/khi-robot:noetic
+    container_name: khi_robot_container
+    tty: true
+    restart: always
+    privileged: true
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: ../
+        target: /WorkSpace
+      - type: bind
+        source: ../rs007n_ros_pkg
+        target: /catkin_ws/src/rs007n_ros_pkg
+    working_dir: /catkin_ws
+    network_mode: host

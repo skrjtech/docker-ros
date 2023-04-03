@@ -1,9 +1,6 @@
-docs/Memo.txt
-docs/images/資料作成用/資料用 1-1.jpg
-docs/images/資料作成用/資料用 2-1.jpg
-docs/images/資料作成用/資料用 3-1.jpg
-docs/images/資料作成用/資料用 4-1.jpg
-docs/images/資料作成用/資料用 5-1.jpg
-docs/images/資料作成用/資料用 6-1.jpg
-docs/images/資料作成用/資料用 7-1.jpg
-docs/images/資料作成用/資料用-1.jpg
+
+docs/images
+samples
+.gitignore
+docs/PDF
+.rs007n_ros_pkg

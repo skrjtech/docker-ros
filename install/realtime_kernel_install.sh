@@ -20,11 +20,11 @@ sudo apt update && sudo apt -y upgrade
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get build-dep linux -y
 sudo apt-get install -y libncurses-dev flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf fakeroot
-
 yes '' | make oldconfig
+
 # make menuconfig
 make -j `nproc` deb-pkg
 sudo dpkg -i ../*.deb
 
 # Reboot
-# sudo reboot
+sudo reboot

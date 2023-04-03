@@ -1,0 +1,74 @@
+FROM ros:melodic
+
+SHELL [ "/bin/bash", "-c" ]
+
+RUN apt update && apt -y upgrade
+RUN apt-get update && apt -y upgrade
+RUN apt install -y sudo git wget curl make tmux x11-apps
+RUN apt install -y python-pip
+RUN echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
+RUN pip install --upgrade pip setuptools
+
+RUN set -x && source /opt/ros/melodic/setup.bash && \
+    sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list && \
+    sudo rosdep init && \
+    rosdep update && \ 
+    sudo apt install -y cmake && \
+    sudo apt-get install -y python-wstool python-catkin-tools && \
+    CATKIN_WS=/catkin_ws && \
+    mkdir -p $CATKIN_WS/src && \
+    cd $CATKIN_WS && \
+    catkin init && \
+    catkin build && \
+    cd $CATKIN_WS/src && \
+    git clone https://github.com/Kawasaki-Robotics/khi_robot.git && \
+    cd $CATKIN_WS && \
+    rosdep install -y -r --from-paths src --ignore-src && \
+    catkin build && \
+    echo "source ${CATKIN_WS}/devel/setup.bash" >> ~/.bashrc && \
+    source ~/.bashrc 
+
+CMD [ "/bin/bash"]
+
+# Step 1
+# FROM skrjtech/ros:noetic
+
+# SHELL [ "/bin/bash", "-c" ]
+
+# RUN apt update H apt -y upgrade
+# RUN apt-get update && apt -y upgrade
+# RUN apt install -y sudo git wget make tmux x11-apps
+
+# RUN ln -s /usr/bin/python3 /usr/bin/python
+# RUN echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
+# RUN pip install --upgrade pip setuptools
+# RUN pip install jupyterlab
+
+# # khirobotsetup
+# COPY archives/khirobotsetup.sh /.khirobotsetup.sh
+
+# CMD [ "/bin/bash"]
+
+# Step 2
+# FROM skrjtech/khi_robot:noetic
+
+# Step 1
+# FROM skrjtech/ros:melodic
+
+# SHELL [ "/bin/bash", "-c" ]
+
+# RUN apt update && apt -y upgrade
+# RUN apt-get update && apt -y upgrade
+# RUN apt install -y sudo git wget make tmux x11-apps
+
+# RUN echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
+# RUN pip install --upgrade pip setuptools
+
+# # khirobotsetup
+# COPY archives/khirobotsetup.sh /.khirobotsetup.sh
+
+# CMD [ "/bin/bash"]
+
+# Step 2
+# FROM skrjtech/khi_robot:melodic
+# CMD [ "/bin/bash"]
